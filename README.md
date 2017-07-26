@@ -91,7 +91,7 @@ This is second paragraph of entry page.
 // "swordCount" will be our variable for conditional branching for user choices.
 You see ugly monster! What you will do with him?
 * Spit at his face! -> SpitToMonster
-* { swordCount } Look around -> FindSword
+* { swordCount == 0 } Look around -> FindSword
 * { swordCount > 0 } Stab and cut! -> KillMonster
 
 -> SpitToMonster
