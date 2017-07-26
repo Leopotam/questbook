@@ -4,7 +4,12 @@ Specification for data format of interactive books / quests / dialogues / scenar
 ## Goals
 There is [Ink narrative language](http://www.inklestudios.com/ink/), it works good enough, but its fat / complex and allows to solve one problem in multiple ways.
 
-This format - attempt to create simple readable format with lightwight runtime / without standalone compiler and ability to save / restore progress.
+This format - attempt to create:
+* Simple readable way to create graph of textual content.
+* Without standalone compiler as requirement.
+* Lightwight processing / runtime without complex requirements.
+* Save / load feature.
+* Not so painful localization feature.
 
 ## Format description
 All data splitted to logical blocks - pages, first page will be used as entry point. Each page contains:
@@ -70,11 +75,21 @@ All data splitted to logical blocks - pages, first page will be used as entry po
     * Text
 
         Text for user. Can be optional if its only one variant - redirection will be processed without delay.
+        ```
+        Cut red wire and pray...
+        ```
     * Link
 
          Link to target page on selection of this variant. Should be valid name of one of exist pages.
-
+         ```
+         -> FindSomething
+         ```
          There is special page name - "END", it should be used for stop execution flow (game over).
+
+    Each choice should be placed on separate line:
+    ```
+    * Go to north -> GoNorth
+    ```
 
 Order of these blocks important and fixed (as described above), you cant change it.
 
