@@ -127,5 +127,20 @@ Its good ending of your journey!
 * -> END
 ```
 
+## Runtime execution sequence
+1. Load markup and receive document.
+2. Validate document.
+If still no exceptions - document is valid and ready to process.
+3. Get current page from document. If its not exists - stop execution, document completed successfully.
+4. If page contains optional logic - process all parsed items.
+5. Process all parsed text paragraphes of page:
+    * Questbook implementation should provide api-helper for process buitlin logic blocks inside each paragraph.
+6. Check for single choice with no text on it (auto redirection to new page), make redirection to required page and start new page rendering from point 3. Questbook implementation should provide api-helper for this.
+7. Process all parsed choices:
+    * Check each choice for visibility based on optional condition and show it only on success. Questbook implementation should provide api-helper for this.
+8. Process user input and make choice of selection at document.
+9. Start new page rendering from point 3.
+
 ## Implementation
 * [Typescript/ javascript implementation](https://github.com/Leopotam/questbook-js.git).
+* [C# / Unity implementation](https://github.com/Leopotam/LeopotamGroupLibraryUnity/tree/develop/Questbook).
