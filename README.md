@@ -142,5 +142,5 @@ If still no exceptions - document is valid and ready to process.
 9. Start new page rendering from point 3.
 
 ## Implementation
-* [Typescript/ javascript implementation](https://github.com/Leopotam/questbook-js.git).
-* [C# / Unity implementation](https://github.com/Leopotam/LeopotamGroupLibraryUnity/tree/develop/Questbook).
+* [Typescript/ javascript implementation](https://github.com/Leopotam/questbook-js).
+* [C# implementation](https://github.com/Leopotam/questbook-csharp).
